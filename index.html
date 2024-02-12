@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Page Title</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+  <script src='main.js'></script>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  #iphone {
+    width: 308px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  #container {
+    width: 300px;
+    height: 600px;
+    padding: 15px;
+    border: solid #494150 3px;
+    border-radius: 50px;
+    background-color: #000000;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: start;
+    position: relative;
+  }
+
+  #nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+  }
+
+  #nav div {
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+  #right {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  .icon img {
+    width: 15px;
+  }
+
+  .icon img:nth-child(3) {
+    width: 25px;
+
+  }
+
+  #result {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    height: 190px;
+    width: 100%;
+    border-radius: 50px;
+  }
+
+  #resultDisplay {
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px;
+    color: white;
+  }
+
+  #button {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .key {
+    width: 59px;
+    height: 59px;
+    border-radius: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 30px;
+    background-color: #333333;
+    border: transparent;
+    cursor: pointer;
+  }
+
+  .key:hover {
+    background-color: #737373;
+    transition: .4s;
+  }
+
+  .key:not(:hover) {
+    transition: .4s;
+    background-color: #333333;
+  }
+
+  .key:nth-child(2) {
+    font-weight: bold;
+  }
+
+  .key:nth-child(-n + 3) {
+    background-color: #a5a5a5;
+    color: #000000;
+  }
+
+  .key:nth-child(-n + 3):hover {
+    background-color: #d9d9d9;
+    transition: .4s;
+  }
+
+  .key:nth-child(-n + 3):not(:hover) {
+    transition: .4s;
+    background-color: #a5a5a5;
+  }
+
+  .key:nth-child(4),
+  :nth-child(8),
+  :nth-child(12),
+  :nth-child(16),
+  :nth-child(19) {
+    background-color: #ff9f0a;
+  }
+
+  .key:nth-child(4):hover,
+  :nth-child(8):hover,
+  :nth-child(12):hover,
+  :nth-child(16):hover,
+  :nth-child(19):hover {
+    background-color: #fbc78d;
+    transition: .4s;
+  }
+
+  .key:nth-child(4):not(:hover),
+  :nth-child(8):not(:hover),
+  :nth-child(12):not(:hover),
+  :nth-child(16):not(:hover),
+  :nth-child(19):not(:hover) {
+    transition: .4s;
+    background-color: #ff9f0a;
+  }
+
+  .key:nth-child(17) {
+    width: 126px;
+    border-radius: 200px;
+    text-align: start;
+  }
+
+  .key:nth-child(17) p {
+    margin-left: 20px;
+  }
+
+  #home {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    position: relative;
+  }
+
+  #homeButton {
+    position: absolute;
+    width: 110px;
+    border-radius: 20px;
+    height: 5px;
+    background-color: #FFF;
+    top: 45px;
+  }
+
+  #powerButton {
+    position: absolute;
+    height: 50px;
+    width: 4px;
+    background-color: #7e7780;
+    right: 0;
+    top: 170px;
+    border-radius: 0 5px 5px 0;
+  }
+
+  #upButton {
+    position: absolute;
+    height: 50px;
+    width: 4px;
+    background-color: #7e7780;
+    left: 0;
+    top: 140px;
+    border-radius: 5px 0 0 5px;
+  }
+
+  #downButton {
+    position: absolute;
+    height: 50px;
+    width: 4px;
+    background-color: #7e7780;
+    left: 0;
+    top: 200px;
+    border-radius: 5px 0 0 5px;
+  }
+
+  @media screen and (max-width: 400px) {
+    #iphone {
+      transform: scale(0.8);
+    }
+  }
+
+  @media screen and (max-width: 300px) {
+    #powerButton {
+      right: 0px;
+    }
+
+    #upButton {
+      left: 0px;
+    }
+
+    #downButton {
+      left: 0px;
+    }
+  }
+</style>
+
+<body>
+  <div id="iphone">
+    <div id="container">
+      <div id="nav">
+        <div id="time"></div>
+        <div id="dynamicIsland"></div>
+        <div id="right">
+          <div class="icon">
+            <img
+              src="https://cdn.discordapp.com/attachments/712281149577363517/1202730551539142687/network.png?ex=65ce851d&is=65bc101d&hm=91f4a6f2d6af3ceff7263e7854994616e77046d3fcffccc2e6b1c929ab6c6a79&">
+            <img
+              src="https://cdn.discordapp.com/attachments/712281149577363517/1202730550805266493/5G.png?ex=65ce851c&is=65bc101c&hm=625bf059c618f4cebc598fc6d61129a8770eb44b32abf628897b910652e11963&">
+            <img
+              src="https://cdn.discordapp.com/attachments/712281149577363517/1202730551228899399/battery.png?ex=65ce851d&is=65bc101d&hm=3a0f02cdb42ed1a5da2afdc3d2eb3c40bcd41155ab3aa570e3d0594149d4bb73&">
+          </div>
+        </div>
+      </div>
+      <div id="result">
+        <div id="resultDisplay">0</div>
+      </div>
+      <div id="button">
+        <button class="key" onclick="clearDisplay()">AC</button>
+        <button class="key" onclick="toggleSign()">⁺/₋</button>
+        <button class="key" onclick="append('%')">%</button>
+        <button class="key" onclick="append('/')">÷</button>
+        <button class="key" onclick="append('7')">7</button>
+        <button class="key" onclick="append('8')">8</button>
+        <button class="key" onclick="append('9')">9</button>
+        <button class="key" onclick="append('*')">x</button>
+        <button class="key" onclick="append('4')">4</button>
+        <button class="key" onclick="append('5')">5</button>
+        <button class="key" onclick="append('6')">6</button>
+        <button class="key" onclick="append('-')">-</button>
+        <button class="key" onclick="append('1')">1</button>
+        <button class="key" onclick="append('2')">2</button>
+        <button class="key" onclick="append('3')">3</button>
+        <button class="key" onclick="append('+')">+</button>
+        <button class="key" onclick="append('0')">
+          <p>0</p>
+        </button>
+        <button class="key" onclick="append('.')">,</button>
+        <button class="key" onclick="calculate()">=</button>
+      </div>
+      <div id="home">
+        <div id="homeButton"></div>
+      </div>
+    </div>
+    <div id="powerButton"></div>
+    <div id="upButton"></div>
+    <div id="downButton"></div>
+  </div>
+
+  <script>
+    function clearDisplay() {
+      document.getElementById('resultDisplay').innerText = '0';
+    }
+
+    // Fonction pour changer le signe du nombre affiché
+    function toggleSign() {
+      let result = document.getElementById('resultDisplay').innerText;
+      if (result !== '0') {
+        if (result.charAt(0) === '-') {
+          document.getElementById('resultDisplay').innerText = result.slice(1);
+        } else {
+          document.getElementById('resultDisplay').innerText = '-' + result;
+        }
+      }
+    }
+
+    // Fonction pour ajouter des chiffres et opérateurs à l'écran
+    function append(value) {
+      let result = document.getElementById('resultDisplay').innerText;
+      if (result === '0' && value !== '.') {
+        document.getElementById('resultDisplay').innerText = value;
+      } else {
+        document.getElementById('resultDisplay').innerText += value;
+      }
+    }
+
+    // Fonction pour calculer le résultat
+    function calculate() {
+      let result = document.getElementById('resultDisplay').innerText;
+      let calculatedResult = eval(result);
+      document.getElementById('resultDisplay').innerText = calculatedResult;
+    }
+
+    // Hours
+    document.addEventListener("DOMContentLoaded", function () {
+      const now = new Date();
+      const hours = now.getHours();
+      let minutes = now.getMinutes();
+      if (minutes < 10) {
+        minutes = '0' + minutes;
+      }
+      document.getElementById('time').innerText = hours + ':' + minutes;
+    });
+
+  </script>
+</body>
+
+</html>
