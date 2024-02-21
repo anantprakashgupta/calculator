@@ -1,35 +1,142 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <meta charset='utf-8'>
-  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-  <title>Page Title</title>
-  <meta name='viewport' content='width=device-width, initial-scale=1'>
-  <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-  <script src='main.js'></script>
-</head>
-<style>
-  * {
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full Form</title>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+
+      /* display: grid; */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    }
+
+    header {
+      background-color: #116890;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center; /* Center elements vertically */
+    }
+
+    header h1 {
+      color: white;
+      font-size: 20px;
+      margin: 0; /* Remove bottom margin for better alignment */
+    }
+
+    nav {
+      display: flex;
+      list-style: none; /* Remove default list styling */
+      padding: 0;
+      margin: 0;
+    }
+
+    nav a {
+      display: block;
+      padding: 10px 15px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      /* Adjust spacing between list items as needed */
+      margin-right: 20px;
+    }
+
+    nav a.active {
+      background-color: #439a9a;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+      margin-bottom: 20px;
+    }
+
+    #apiData {
+      background-color: #116890;
+      padding: 20px;
+      border-radius: 8px;
+      font-size: 20px;
+      color: #ffffff;
+      text-align: center;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+
+    .data-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex; /* Make the list horizontal */
+      /* Flexbox properties for spacing and centering items */
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .data-list li {
+      margin-bottom: 10px;
+    }
+
+    .data-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Media Queries for responsiveness */
+    @media only screen and (max-width: 600px) {
+      nav a {
+        font-size: 16px;
+        margin-right: 10px; /* Adjust spacing for smaller screens */
+      }
+      .container {
+        padding: 10px;
+      }
+    }
+    * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
 
-  body {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
+
 
   #iphone {
     width: 308px;
-    height: 600px;
+    height: 600px;  
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
+    margin-top: 20px;
+    
   }
 
   #container {
@@ -248,106 +355,119 @@
       left: 0px;
     }
   }
-</style>
+  </style>
+</head>
 
 <body>
-  <div id="iphone">
-    <div id="container">
-      <div id="nav">
-        <div id="time"></div>
-        <div id="dynamicIsland"></div>
-        <div id="right">
-          <div class="icon">
-            <img
-              src="https://cdn.discordapp.com/attachments/712281149577363517/1202730551539142687/network.png?ex=65ce851d&is=65bc101d&hm=91f4a6f2d6af3ceff7263e7854994616e77046d3fcffccc2e6b1c929ab6c6a79&">
-            <img
-              src="https://cdn.discordapp.com/attachments/712281149577363517/1202730550805266493/5G.png?ex=65ce851c&is=65bc101c&hm=625bf059c618f4cebc598fc6d61129a8770eb44b32abf628897b910652e11963&">
-            <img
-              src="https://cdn.discordapp.com/attachments/712281149577363517/1202730551228899399/battery.png?ex=65ce851d&is=65bc101d&hm=3a0f02cdb42ed1a5da2afdc3d2eb3c40bcd41155ab3aa570e3d0594149d4bb73&">
+    <header>
+        <h1>All In <span style="color: rgb(157, 255, 0);">one</span></h1>
+        <nav>
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </nav>
+      </header>
+
+
+    <div id="iphone">
+      <div id="container">
+        <div id="nav">
+          <div id="time"></div>
+          <div id="dynamicIsland"></div>
+          <div id="right">
+            <div class="icon">
+              <img
+                src="https://cdn.discordapp.com/attachments/712281149577363517/1202730551539142687/network.png?ex=65ce851d&is=65bc101d&hm=91f4a6f2d6af3ceff7263e7854994616e77046d3fcffccc2e6b1c929ab6c6a79&">
+              <img
+                src="https://cdn.discordapp.com/attachments/712281149577363517/1202730550805266493/5G.png?ex=65ce851c&is=65bc101c&hm=625bf059c618f4cebc598fc6d61129a8770eb44b32abf628897b910652e11963&">
+              <img
+                src="https://cdn.discordapp.com/attachments/712281149577363517/1202730551228899399/battery.png?ex=65ce851d&is=65bc101d&hm=3a0f02cdb42ed1a5da2afdc3d2eb3c40bcd41155ab3aa570e3d0594149d4bb73&">
+            </div>
           </div>
         </div>
+        <div id="result">
+          <div id="resultDisplay">0</div>
+        </div>
+        <div id="button">
+          <button class="key" onclick="clearDisplay()">AC</button>
+          <button class="key" onclick="toggleSign()">⁺/₋</button>
+          <button class="key" onclick="append('%')">%</button>
+          <button class="key" onclick="append('/')">÷</button>
+          <button class="key" onclick="append('7')">7</button>
+          <button class="key" onclick="append('8')">8</button>
+          <button class="key" onclick="append('9')">9</button>
+          <button class="key" onclick="append('*')">x</button>
+          <button class="key" onclick="append('4')">4</button>
+          <button class="key" onclick="append('5')">5</button>
+          <button class="key" onclick="append('6')">6</button>
+          <button class="key" onclick="append('-')">-</button>
+          <button class="key" onclick="append('1')">1</button>
+          <button class="key" onclick="append('2')">2</button>
+          <button class="key" onclick="append('3')">3</button>
+          <button class="key" onclick="append('+')">+</button>
+          <button class="key" onclick="append('0')">
+            <p>0</p>
+          </button>
+          <button class="key" onclick="append('.')">,</button>
+          <button class="key" onclick="calculate()">=</button>
+        </div>
+        <div id="home">
+          <div id="homeButton"></div>
+        </div>
       </div>
-      <div id="result">
-        <div id="resultDisplay">0</div>
-      </div>
-      <div id="button">
-        <button class="key" onclick="clearDisplay()">AC</button>
-        <button class="key" onclick="toggleSign()">⁺/₋</button>
-        <button class="key" onclick="append('%')">%</button>
-        <button class="key" onclick="append('/')">÷</button>
-        <button class="key" onclick="append('7')">7</button>
-        <button class="key" onclick="append('8')">8</button>
-        <button class="key" onclick="append('9')">9</button>
-        <button class="key" onclick="append('*')">x</button>
-        <button class="key" onclick="append('4')">4</button>
-        <button class="key" onclick="append('5')">5</button>
-        <button class="key" onclick="append('6')">6</button>
-        <button class="key" onclick="append('-')">-</button>
-        <button class="key" onclick="append('1')">1</button>
-        <button class="key" onclick="append('2')">2</button>
-        <button class="key" onclick="append('3')">3</button>
-        <button class="key" onclick="append('+')">+</button>
-        <button class="key" onclick="append('0')">
-          <p>0</p>
-        </button>
-        <button class="key" onclick="append('.')">,</button>
-        <button class="key" onclick="calculate()">=</button>
-      </div>
-      <div id="home">
-        <div id="homeButton"></div>
-      </div>
+      <div id="powerButton"></div>
+      <div id="upButton"></div>
+      <div id="downButton"></div>
     </div>
-    <div id="powerButton"></div>
-    <div id="upButton"></div>
-    <div id="downButton"></div>
-  </div>
-
-  <script>
-    function clearDisplay() {
-      document.getElementById('resultDisplay').innerText = '0';
-    }
-
-    // Fonction pour changer le signe du nombre affiché
-    function toggleSign() {
-      let result = document.getElementById('resultDisplay').innerText;
-      if (result !== '0') {
-        if (result.charAt(0) === '-') {
-          document.getElementById('resultDisplay').innerText = result.slice(1);
-        } else {
-          document.getElementById('resultDisplay').innerText = '-' + result;
+  
+    <script>
+      function clearDisplay() {
+        document.getElementById('resultDisplay').innerText = '0';
+      }
+  
+      // Fonction pour changer le signe du nombre affiché
+      function toggleSign() {
+        let result = document.getElementById('resultDisplay').innerText;
+        if (result !== '0') {
+          if (result.charAt(0) === '-') {
+            document.getElementById('resultDisplay').innerText = result.slice(1);
+          } else {
+            document.getElementById('resultDisplay').innerText = '-' + result;
+          }
         }
       }
-    }
-
-    // Fonction pour ajouter des chiffres et opérateurs à l'écran
-    function append(value) {
-      let result = document.getElementById('resultDisplay').innerText;
-      if (result === '0' && value !== '.') {
-        document.getElementById('resultDisplay').innerText = value;
-      } else {
-        document.getElementById('resultDisplay').innerText += value;
+  
+      // Fonction pour ajouter des chiffres et opérateurs à l'écran
+      function append(value) {
+        let result = document.getElementById('resultDisplay').innerText;
+        if (result === '0' && value !== '.') {
+          document.getElementById('resultDisplay').innerText = value;
+        } else {
+          document.getElementById('resultDisplay').innerText += value;
+        }
       }
-    }
-
-    // Fonction pour calculer le résultat
-    function calculate() {
-      let result = document.getElementById('resultDisplay').innerText;
-      let calculatedResult = eval(result);
-      document.getElementById('resultDisplay').innerText = calculatedResult;
-    }
-
-    // Hours
-    document.addEventListener("DOMContentLoaded", function () {
-      const now = new Date();
-      const hours = now.getHours();
-      let minutes = now.getMinutes();
-      if (minutes < 10) {
-        minutes = '0' + minutes;
+  
+      // Fonction pour calculer le résultat
+      function calculate() {
+        let result = document.getElementById('resultDisplay').innerText;
+        let calculatedResult = eval(result);
+        document.getElementById('resultDisplay').innerText = calculatedResult;
       }
-      document.getElementById('time').innerText = hours + ':' + minutes;
-    });
-
-  </script>
-</body>
+  
+      // Hours
+      document.addEventListener("DOMContentLoaded", function () {
+        const now = new Date();
+        const hours = now.getHours();
+        let minutes = now.getMinutes();
+        if (minutes < 10) {
+          minutes = '0' + minutes;
+        }
+        document.getElementById('time').innerText = hours + ':' + minutes;
+      });
+  
+    </script>
+  </body>
+  
 
 </html>
+
